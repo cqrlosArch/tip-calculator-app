@@ -1,0 +1,38 @@
+@use '../abstracts/variables.scss' as c;
+@use '../abstracts/mixins.scss' as mx;
+@use '../abstracts/functions.scss' as fx;
+
+@use '../base/fonts.scss' as f;
+
+
+html {
+  background-color: c.$bg;
+  box-sizing: border-box;
+  font-size: 16px;
+  min-width: 1440px;
+  @include mx.point("md") {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    min-width: 990px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  text-align: center;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  &__img {
+    max-width: 800px;
+    width: 100%;
+  }
+}
