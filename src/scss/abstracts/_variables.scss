@@ -1,13 +1,17 @@
 //Colors
-$textColor: #333333;
-$textSecondary: #4f4f4f;
-$bg:#f0f0f0;
-
+$strong-cyan: hsl(172, 67%, 45%);
+$dark-cyan: hsl(172, 67%, 45%);
+$dark-gray: hsl(186, 14%, 43%);
+$gray: hsl(184, 14%, 56%);
+$very-light-gray: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+$bg:hsl(185,41%,84%);
 
 //breakpoints
 $beakpoints: (
-  'sm': 576px,
-  'md': 768px,
-  'lg': 992px,
-  'xl': 1200px,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
 );
+
