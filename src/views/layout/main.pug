@@ -1,3 +1,4 @@
+include ../mixins/tip
 main.main
   form#form.form
     .form__layout
@@ -6,18 +7,9 @@ main.main
         input(type="text" id="bill").form__input
       fieldset.form-tips
         legend.form-tips__title Select Tip %
-        input(type="radio" value="5" id="5%" name="tip").form-tips__input
-        label(for="5%").form-tips__label 5%
-        input(type="radio" value="10" id="10%" name="tip").form-tips__input
-        label(for="10%").form-tips__label 10%
-        input(type="radio" value="15" id="15%" name="tip").form-tips__input
-        label(for="15%").form-tips__label 15%
-        input(type="radio" value="25" id="25%" name="tip").form-tips__input
-        label(for="25%").form-tips__label 25%
-        input(type="radio" value="50" id="50%" name="tip").form-tips__input
-        label(for="50%").form-tips__label 50%
-        input(type="radio" id="custom" value="" name="tip").form-tips__input
-        label(for="custom").form-tips__label Custom
+        for per in locals.percentages
+          +tip(per)
+        input(type="text" id="" placeholder="Custom").form-tips__input.form-tips__input--is-visible
       .form__field
         label(for="bill").form__label Number of People
         input(type="number").form__input
