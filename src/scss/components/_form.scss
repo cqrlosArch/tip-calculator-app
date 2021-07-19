@@ -3,32 +3,77 @@
 .form {
   &__layout,
   &__field {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    position: relative;
+  }
+
+  &__field::after {
+    content: url("../assets/images/icon-dollar.svg");
+    position: absolute;
+    top: 50%;
+    transform: translate(20px, 50%);
+  }
+  &__field:nth-of-type(2)::after {
+    content: url("../assets/images/icon-person.svg");
+  }
+  &__label {
+    margin: 0.5rem 0;
+    color: c.$label-text;
+  }
+  &__input {
+    width: inherit;
+    padding: 0.5rem 1rem;
+    background-color: c.$placeholder;
+    border: none;
+    height: 45px;
+    border-radius: 5px;
+    text-align: right;
+    color: c.$bg-label;
+    font-weight: 700;
+    font-size: 1.5rem;
+    &:focus {
+      outline-color: c.$bg-label;
+    }
+    &:invalid {
+      outline-color: c.$input-error;
+    }
   }
 }
 
 .form-tips {
+  margin: 1rem 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
   gap: 1rem;
   width: 100%;
   &__input {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
     &--is-visible {
-      display: block;
+      opacity: 1;
+      visibility: inherit;
+      position: relative;
       min-width: 142px;
       border-radius: 5px;
-      border:none;
+      border: none;
       text-align: right;
       height: 45px;
-      padding: 0 .5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: c.$bg-label;
     }
   }
   &__title {
+    appearance: none;
     grid-column: span 2;
     text-align: left;
+    margin-bottom: -0.5rem;
+    color: c.$label-text;
   }
   &__label {
     background-color: c.$bg-label;
@@ -40,5 +85,10 @@
     color: c.$white;
     font-size: 1.5rem;
     cursor: pointer;
+    font-weight: 700;
+    &:hover {
+      background-color: c.$dark-cyan;
+      color: c.$bg-label;
+    }
   }
 }

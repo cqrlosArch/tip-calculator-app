@@ -12,12 +12,14 @@ main.main
         input(type="text" id="" placeholder="Custom").form-tips__input.form-tips__input--is-visible
       .form__field
         label(for="bill").form__label Number of People
-        input(type="number").form__input
-    .form__layout
-      .display-tip 
-        .display-tip__text Person 
-        .display-tip__number 0
-      .display-total 
-        .display-tip__text Total 
-        .display-tip__number 0
-      button(type="reset").form__reset Reset
+        input(type="number" value="0" min="1" title="Can't be zero").form__input
+    .layout
+      .layout__container
+        .layout__text Tip Amount
+          span.layout__span / person
+        .layout__number#tip-amount $0.00
+      .layout__container
+        .layout__text Total
+          span.layout__span / person
+        .layout__number#total-person $0.00
+      button(type="reset").layout__button Reset

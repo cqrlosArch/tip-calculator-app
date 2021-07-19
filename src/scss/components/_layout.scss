@@ -1,0 +1,44 @@
+@use '../abstracts/variables.scss' as c;
+
+.layout {
+  background-color: c.$bg-label;
+  margin-top: 1.5rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  gap: 2rem;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: c.$white;
+  }
+  &__text {
+    text-align: left;
+    font-weight: 700;
+  }
+  &__span {
+    padding-top: 0.5rem;
+    display: block;
+    color: c.$gray;
+  }
+  &__number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: c.$dark-cyan;
+  }
+
+  &__button {
+    appearance: none;
+    background-color: c.$dark-cyan;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem;
+    text-transform: uppercase;
+    color: c.$bg-label;
+    font-weight: 700;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
