@@ -16,7 +16,7 @@
       "plugin:prettier/recommended"
     ],
     "rules": {
-      "no-console": ["error", { "allow": ["error"] }],
+      "no-console": "warn",
       "no-var": "error",
       "object-shorthand": "error",
       "prefer-const": "error",

@@ -1,3 +1,7 @@
-.header{
- padding:3rem;
+@use '../abstracts/mixins.scss' as mx;
+.header {
+  padding: 3rem;
+  @include mx.point('md') {
+    padding: 2rem;
+  }
 }

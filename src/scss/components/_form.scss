@@ -1,6 +1,12 @@
 @use '../abstracts/variables.scss' as c;
+@use '../abstracts/mixins.scss' as mx;
 
 .form {
+  @include mx.point('md') {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
   &__layout,
   &__field {
     width: 100%;
@@ -11,13 +17,13 @@
   }
 
   &__field::after {
-    content: url("../assets/images/icon-dollar.svg");
+    content: url('../assets/images/icon-dollar.svg');
     position: absolute;
     top: 50%;
     transform: translate(20px, 50%);
   }
   &__field:nth-of-type(2)::after {
-    content: url("../assets/images/icon-person.svg");
+    content: url('../assets/images/icon-person.svg');
   }
   &__label {
     margin: 0.5rem 0;
@@ -50,10 +56,19 @@
   grid-template-rows: auto;
   gap: 1rem;
   width: 100%;
+  @include mx.point('md') {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+
   &__input {
     opacity: 0;
     visibility: hidden;
     position: absolute;
+
+    &:checked + .form-tips__label {
+      background-color: c.$dark-cyan;
+      color: c.$bg-label;
+    }
     &--is-visible {
       opacity: 1;
       visibility: inherit;
@@ -66,6 +81,10 @@
       font-size: 1.5rem;
       font-weight: 700;
       color: c.$bg-label;
+      @include mx.point('md') {
+        min-width: 100%;
+        min-height: 45px;
+      }
     }
   }
   &__title {
@@ -74,6 +93,9 @@
     text-align: left;
     margin-bottom: -0.5rem;
     color: c.$label-text;
+    @include mx.point('md') {
+      grid-column: span 3;
+    }
   }
   &__label {
     background-color: c.$bg-label;
@@ -86,6 +108,10 @@
     font-size: 1.5rem;
     cursor: pointer;
     font-weight: 700;
+    @include mx.point('md') {
+      padding: 0.5rem 3rem;
+      min-width: 100%;
+    }
     &:hover {
       background-color: c.$dark-cyan;
       color: c.$bg-label;

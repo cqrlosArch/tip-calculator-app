@@ -4,15 +4,15 @@ main.main
     .form__layout
       .form__field
         label(for="bill").form__label Bill
-        input(type="text" id="bill").form__input
+        input(type="text" id="bill" name="bill").form__input
       fieldset.form-tips
         legend.form-tips__title Select Tip %
         for per in locals.percentages
           +tip(per)
-        input(type="text" id="" placeholder="Custom").form-tips__input.form-tips__input--is-visible
+        input(type="text" id="custom-tip" placeholder="Custom" name="tip").form-tips__input.form-tips__input--is-visible
       .form__field
-        label(for="bill").form__label Number of People
-        input(type="number" value="0" min="1" title="Can't be zero").form__input
+        label(for="num-person").form__label Number of People
+        input(type="number" value="0" min="1" title="Can't be zero" id="num-person" name="person").form__input
     .layout
       .layout__container
         .layout__text Tip Amount

@@ -5,17 +5,16 @@ $dark-gray: hsl(186, 14%, 43%);
 $gray: hsl(184, 14%, 56%);
 $very-light-gray: hsl(189, 41%, 97%);
 $white: hsl(0, 0%, 100%);
-$bg:hsl(185,41%,84%);
-$bg-label:hsl(183, 100%, 15%);
-$placeholder:hsl(210, 25%, 92%);
-$label-text:hsla(220, 2%, 32%, 0.856);
-$input-error:hsl(9, 40%, 61%);
+$bg: hsl(185, 41%, 84%);
+$bg-label: hsl(183, 100%, 15%);
+$placeholder: hsl(210, 25%, 92%);
+$label-text: hsla(220, 2%, 32%, 0.856);
+$input-error: hsl(9, 40%, 61%);
 
 //breakpoints
 $beakpoints: (
-  "sm": 576px,
-  "md": 768px,
-  "lg": 992px,
-  "xl": 1200px,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px
 );
-

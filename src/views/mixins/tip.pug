@@ -1,3 +1,3 @@
 mixin tip(per)
-  input(type="radio" value=`${per}` id=`${per}` name="tip").form-tips__input
+  input(type="radio" value=`${per.replace('%', '')}` id=`${per}` name="tip").form-tips__input
   label(for=`${per}`).form-tips__label= per

@@ -1,4 +1,5 @@
 @use '../abstracts/variables.scss' as c;
+@use '../abstracts/mixins.scss' as mx;
 
 .layout {
   background-color: c.$bg-label;
@@ -8,6 +9,7 @@
   flex-direction: column;
   padding: 2rem 1rem;
   gap: 2rem;
+
   &__container {
     display: flex;
     justify-content: space-between;
@@ -40,5 +42,8 @@
     font-weight: 700;
     font-size: 1.5rem;
     cursor: pointer;
+    @include mx.point('md') {
+      margin-top: auto;
+    }
   }
 }

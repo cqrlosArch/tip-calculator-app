@@ -1,11 +1,11 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  mode: "production",
+  mode: 'production',
   output: {
-    path: path.resolve(__dirname, "../dist"),
-    filename: "js/[name].min.js",
-    clean: true,
+    path: path.resolve(__dirname, '../dist'),
+    filename: 'js/[name].min.js',
+    clean: true
   },
-  devtool: "source-map",
+  devtool: 'source-map'
 };
