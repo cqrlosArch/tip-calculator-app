@@ -5,10 +5,13 @@
   background-color: c.$white;
   border-radius: 15px;
   padding: 1.5rem;
-  @include mx.point('md') {
+  @include mx.point('sm') {
     margin-right: auto;
     margin-left: auto;
-    max-width: 60%;
+    max-width: 75vw;
     padding: 2rem;
+  }
+  @include mx.point('lg') {
+    max-width: 60vw;
   }
 }

@@ -17,6 +17,13 @@ body {
   font-family: 'Space Mono', monospace;
   min-height: 100vh;
   text-align: center;
+
+  @include mx.point('lg') {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 fieldset {
