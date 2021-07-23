@@ -1,7 +1,7 @@
 include ../mixins/tip
 main.main
   form#form.form
-    .form__layout
+    .form__layout(role="heading" aria-level="1")
       .form__field
         label(for="bill").form__label Bill
         input(type="text" id="bill" name="bill").form__input

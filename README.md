@@ -8,11 +8,11 @@
 
 <div align="center">
   <h3>
-    <a href="#">
+    <a href="https://tip-calculator-app-three.vercel.app/">
       Demo
     </a>
     <span> | </span>
-    <a href="#">
+    <a href="https://www.frontendmentor.io/solutions/tip-calculator-app-using-vanilla-js-pug-and-sass-Nt7PtsIME">
       Solution
     </a>
     <span> | </span>
