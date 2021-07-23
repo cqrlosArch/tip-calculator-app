@@ -1,45 +1,30 @@
+import CalculatorTips from './CalculatorTips';
+
 const form = document.getElementById('form');
 const tipAmount = document.getElementById('tip-amount');
 const totalPerson = document.getElementById('total-person');
+const inputsRadio = document.querySelectorAll('.form-tips__input');
 
-let Values = {
-  bill: '',
-  tip: '',
-  person: '',
-  totalPerson: '0.00',
-  tipAmount: '0.00',
-  tipPerson() {
-    return this.bill / this.person;
-  },
-  tipAmountValue() {
-    this.tipAmount = (this.tipPerson() * this.tip) / 100;
-  },
-  totalPersonValue() {
-    this.totalPerson = this.tipAmount + this.tipPerson();
-  },
-  validator() {
-    return this.bill !== '' &&
-      !isNaN(this.bill) &&
-      this.tip !== '' &&
-      this.person > 0
-      ? true
-      : false;
-  }
+const tipCalculator = new CalculatorTips();
+
+const calculateTip = (app) => {
+  tipAmount.textContent = `$${app.tipAmountValue().toFixed(2)}`;
+  totalPerson.textContent = `$${app.totalPersonValue().toFixed(2)}`;
 };
 
-const calculateTip = (obj) => {
-  obj.tipAmountValue();
-  obj.totalPersonValue();
-  tipAmount.textContent = `$${obj.tipAmount.toFixed(2)}`;
-  totalPerson.textContent = `$${obj.totalPerson.toFixed(2)}`;
-};
+const unCheckedRadioTip = () =>
+  inputsRadio.forEach((input) => (input.checked = false));
 
 form.addEventListener('input', (e) => {
-  Values = { ...Values, [e.target.name]: parseFloat(e.target.value) };
-  const tipCalculator = Object.create(Values);
-  tipAmount.textContent = `$${tipCalculator.tipAmount}`;
-  totalPerson.textContent = `$${tipCalculator.totalPerson}`;
+  tipCalculator.setValor([e.target.name], parseFloat(e.target.value));
+
+  e.target.classList.contains('form-tips__input--is-visible') &&
+    unCheckedRadioTip();
+
   if (tipCalculator.validator()) {
     calculateTip(tipCalculator);
+  } else {
+    tipAmount.textContent = `$0.00`;
+    totalPerson.textContent = `$0.00`;
   }
 });

@@ -82,6 +82,9 @@
       font-size: 1.5rem;
       font-weight: 700;
       color: c.$bg-label;
+      &:focus {
+        outline-color: c.$bg-label;
+      }
       @include mx.point('md') {
         min-width: 100%;
         min-height: 45px;
