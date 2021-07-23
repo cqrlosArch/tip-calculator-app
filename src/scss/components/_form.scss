@@ -53,12 +53,13 @@
 .form-tips {
   margin: 1rem 0;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 49%);
   grid-template-rows: auto;
-  gap: 1rem;
-  width: 100%;
+  gap: .5rem;
+  width: inherit;
   @include mx.point('md') {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 32%);
+    grid-template-rows: auto;
   }
 
   &__input {
@@ -74,7 +75,6 @@
       opacity: 1;
       visibility: inherit;
       position: relative;
-      min-width: 142px;
       border-radius: 5px;
       border: none;
       text-align: right;
@@ -82,6 +82,7 @@
       font-size: 1.5rem;
       font-weight: 700;
       color: c.$bg-label;
+      padding: 0.5rem;
       &:focus {
         outline-color: c.$bg-label;
       }
@@ -92,10 +93,10 @@
     }
   }
   &__title {
-    appearance: none;
     grid-column: span 2;
     text-align: left;
-    margin-bottom: -0.5rem;
+    height: 25px;
+    margin-bottom: .5rem;
     color: c.$label-text;
     @include mx.point('md') {
       grid-column: span 3;
@@ -114,7 +115,7 @@
     font-weight: 700;
     @include mx.point('md') {
       padding: 0.5rem 2rem;
-      min-width: 100%;
+      
     }
     &:hover {
       background-color: c.$dark-cyan;
